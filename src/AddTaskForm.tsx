@@ -3,7 +3,7 @@ import React from 'react';
 interface AddTaskFormProps{
   text: string,
   addTask: React.ReactEventHandler<HTMLButtonElement>,
-  onTextChange?: React.ChangeEventHandler;
+  onTextChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const AddTaskForm: React.FC<AddTaskFormProps> = props => {

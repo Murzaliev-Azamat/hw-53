@@ -25,4 +25,9 @@
   border: 1px solid gray;
   padding: 10px 5px;
   margin: 5px 0;
+  align-items: center;
+}
+
+.checked {
+  background-color: #33f133;
 }

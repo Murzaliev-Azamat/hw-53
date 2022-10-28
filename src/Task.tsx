@@ -1,15 +1,20 @@
 import React from 'react';
 
 interface TaskProps {
-  text: string;
-  delete: React.MouseEventHandler;
+  text: string,
+  done: boolean,
+  delete: React.MouseEventHandler<HTMLButtonElement>,
+  taskStatusChanged: React.ChangeEventHandler<HTMLInputElement>,
 }
 
 const Task: React.FC<TaskProps> = props => {
   return (
-    <div className="task-container">
+    <div className={props.done ? 'task-container checked' : 'task-container'}>
       <span>{props.text}</span>
-      <button className="button-del" onClick={props.delete}>delete</button>
+      <div>
+        <input type="checkbox" checked={props.done} onChange={props.taskStatusChanged}/>
+        <button className="button-del" onClick={props.delete}>delete</button>
+      </div>
     </div>
   );
 };
